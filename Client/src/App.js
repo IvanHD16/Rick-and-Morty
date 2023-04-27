@@ -35,7 +35,7 @@ function App() {
    const onSearch = (id)=> {
       
       if(characters.find((char)=>char.id===id)) { return alert("Personaje ya existente")}
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
+      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
          if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
          } else {
